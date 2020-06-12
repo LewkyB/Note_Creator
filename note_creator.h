@@ -32,7 +32,6 @@ public:
 
 
 private slots:
-    void on_editor_filepath_line_button_clicked();
 
     void on_launch_button_clicked();
 
@@ -54,8 +53,6 @@ private:
     // Make note_creator window the parent to about_dialog_box
     // so when closing main window the about window will also close
     about_dialog_box *about_box_pointer;
-
-
 
 };
 #endif // NOTE_CREATOR_H

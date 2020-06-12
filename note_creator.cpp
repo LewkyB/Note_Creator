@@ -8,33 +8,12 @@ note_creator::note_creator(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //readSettings();
     settings_file = QApplication::applicationDirPath() + "/settings.ini";
-    //readSettings();
-
-    qDebug() << "ini file name: " << settings_file;
-
-
-    qDebug() << "index 0: " << ui->favorite_list->item(0)->text();
-    qDebug() << "index 1: " << ui->favorite_list->item(1)->text();
-    qDebug() << "index 2: " << ui->favorite_list->item(2)->text();
-    qDebug() << "index 3: " << ui->favorite_list->item(3)->text();
-    qDebug() << "index 4: " << ui->favorite_list->item(4)->text();
-
 }
 
 note_creator::~note_creator()
 {
     delete ui;
-}
-
-// removed after changing from line text to combobox
-void note_creator::on_editor_filepath_line_button_clicked()
-{
-    /*
-   QString file_name = QFileDialog::getOpenFileName(this, "Choose the .exe of the editor you want to use", "C:/", tr("Executable Files (*.exe)"));
-   ui->editor_filepath_line->setText(file_name);
-   */
 }
 
 void note_creator::on_launch_button_clicked()
@@ -75,12 +54,10 @@ void note_creator::on_open_button_clicked()
 {
     QString directorypath = QFileDialog::getExistingDirectory(this, tr("Choose a directory"), "c/:", QFileDialog::ShowDirsOnly|QFileDialog::DontResolveSymlinks);
     ui->directory_line_edit->setText(directorypath);
-
 }
 
 void note_creator::on_set_button_clicked()
 {
-   //QString directory_contents = ui->
     ui->favorite_list->currentItem()->setText(ui->directory_line_edit->text());
 }
 
@@ -94,20 +71,16 @@ void note_creator::writeSettings()
     settings.setValue("index2", ui->favorite_list->item(2)->text());
     settings.setValue("index3", ui->favorite_list->item(3)->text());
     settings.setValue("index4", ui->favorite_list->item(4)->text());
+    settings.setValue("index5", ui->favorite_list->item(5)->text());
+    settings.setValue("index6", ui->favorite_list->item(6)->text());
+    settings.setValue("index7", ui->favorite_list->item(7)->text());
+    settings.setValue("index8", ui->favorite_list->item(8)->text());
+    settings.setValue("index9", ui->favorite_list->item(9)->text());
     settings.endGroup();
 }
 
 void note_creator::readSettings()
 {
-    // too ensure file is available for reading when program loads
-    if (QFile(settings_file).exists())
-    {
-        qDebug() << "settings_file exists! woohoo!!!";
-    }
-    else {
-        qDebug() << "OH NO! settings_file does NOT exist!";
-    }
-
     // load in settings from /settings.ini
     QSettings settings(settings_file, QSettings::IniFormat);
     settings.sync();
@@ -122,6 +95,16 @@ void note_creator::readSettings()
     ui->favorite_list->item(3)->setText(fav3);
     QString fav4 = settings.value("index4", "save favorite directory here").toString();
     ui->favorite_list->item(4)->setText(fav4);
+    QString fav5 = settings.value("index5", "save favorite directory here").toString();
+    ui->favorite_list->item(5)->setText(fav5);
+    QString fav6 = settings.value("index6", "save favorite directory here").toString();
+    ui->favorite_list->item(6)->setText(fav6);
+    QString fav7 = settings.value("index7", "save favorite directory here").toString();
+    ui->favorite_list->item(7)->setText(fav7);
+    QString fav8 = settings.value("index8", "save favorite directory here").toString();
+    ui->favorite_list->item(8)->setText(fav8);
+    QString fav9 = settings.value("index9", "save favorite directory here").toString();
+    ui->favorite_list->item(9)->setText(fav9);
     settings.endGroup();
 }
 
