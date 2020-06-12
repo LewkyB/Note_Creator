@@ -21,8 +21,6 @@
 2. Unzip the `release` folder.
 3. open `note_creator.exe`
 
----
-
 ## How To Use
 
 I wanted to make it easier creating `.txt` and `.md` files for taking notes in for class. The way I keep up with school is having a folder for each class.
