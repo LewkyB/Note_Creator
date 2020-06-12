@@ -45,8 +45,6 @@ When `Note Creator` is closed, it creates a `settings.ini` file in the `release`
 
 When `Note Creator` is opened, it reads the contents of `settings.ini` and sets the favorites accordingly. 
 
----
-
 ## How to build from source
 
 1. Download `Qt Creator` from [here](https://www.qt.io/product/development-tools).
@@ -62,13 +60,9 @@ When `Note Creator` is opened, it reads the contents of `settings.ini` and sets 
 - [ ] allow user to set default text editor
 - [ ] allow user to add and remove favorites
 
----
-
 ## Bugs
 
 - [ ] clicking set directory without anything selected causes program to close 
-
----
 
 ## Credit
 
@@ -77,9 +71,6 @@ When `Note Creator` is opened, it reads the contents of `settings.ini` and sets 
 [Icons by Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 
 [Qt Creator](https://www.qt.io/product/development-tools)
-
-
----
 
 ## License
 
